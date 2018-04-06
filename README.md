@@ -1,5 +1,5 @@
 # Bear Controllers
-TeensyLC .ino files for the bear controllers in Rainbow Bear Attack
+.ino files for TeensyLC made for "Rainbow Bear Attack" (for IMS390S "Burn the Keyboard" SP'18)
 
 ## TeensyLC Pin and Control Layouts
 ### Player 1
