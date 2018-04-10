@@ -8,7 +8,11 @@
 const int kLeft = 0;
 const int kRight = 1;
 const int kUp = 2;
-const int kAttack = 14;
+const int kAttack = A0;
+
+int flexPos;
+int isTouchL;
+int isTouchR;
 
 const double kButtonInterval = 10;
 
@@ -26,4 +30,46 @@ void setup() {
 
   pinMode(kLeft, INPUT_PULLUP);
   pinMode(kRight, INPUT_PULLUP);
+  pinMode(kAttack, INPUT_PULLUP);
+}
+
+void loop() {
+  // This let's the Bounce update it's status.
+   btn.update();
+   // This will activate once each time the button is pressed.
+   // In other words, when the signal 'falls'.
+   if ( btn.fell() ) {
+    Keyboard.press(KEY_SPACE);
+   }
+
+   // This will activate once each time the button is released.
+   // In other words, when the signal 'rises'.
+   if ( btn.rose() ) {
+    Keyboard.release(KEY_SPACE);
+  }
+
+  // Mapping the flex sensor to attack
+  flexPos = analogRead(kAttack);
+  flexPos = map(flexPos, 0, 1023, 0, 1);
+  if(flexPos == 0){
+    Keyboard.release(KEY_E);
+  } else if(flexPos == 1){
+    Keyboard.press(KEY_E);
+  }
+
+  // Mapping left movement
+  isTouchL = touchRead(kLeft);
+  if(isTouchL > 4500){
+    Keyboard.press(KEY_LEFT);
+  } else {
+    Keyboard.release(KEY_LEFT);
+  }
+
+  // Mapping right movement
+  isTouchR = touchRead(kRight);
+  if(isTouchR > 4500){
+    Keyboard.press(KEY_RIGHT);
+  } else {
+    Keyboard.release(KEY_RIGHT);
+  }
 }
