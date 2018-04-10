@@ -49,13 +49,15 @@ void loop() {
   }
 
   // Mapping the flex sensor to attack
+  /* Don't un-comment until flex sensor is plugged in
   flexPos = analogRead(kAttack);
   flexPos = map(flexPos, 0, 1023, 0, 1);
-  // if(flexPos == 0){
-  //   Keyboard.release(KEY_E);
-  // } else if(flexPos == 1){
-  //   Keyboard.press(KEY_E);
-  // }
+  if(flexPos == 0){
+    Keyboard.release(KEY_E);
+  } else if(flexPos == 1){
+    Keyboard.press(KEY_E);
+  }
+  */
 
   // Mapping left movement
   isTouchL = touchRead(kLeft);
