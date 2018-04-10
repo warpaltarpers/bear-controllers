@@ -6,14 +6,14 @@
 PIN | KEY | CONTROL
 --- | --- | -------
 0 | A | Move Left
-1 | W | Move Right
-2 | D | Jump
+1 | D | Move Right
+2 | W | Jump
 14 | E | Attack
 
 ### Player 2
 PIN | KEY | CONTROL
 --- | --- | -------
 0 | J | Move Left
-1 | I | Move Right
-2 | L | Jump
+1 | L | Move Right
+2 | I | Jump
 14 | P | Attack

@@ -39,13 +39,13 @@ void loop() {
    // This will activate once each time the button is pressed.
    // In other words, when the signal 'falls'.
    if ( btn.fell() ) {
-    Keyboard.press(KEY_SPACE);
+    Keyboard.press(KEY_W);
    }
 
    // This will activate once each time the button is released.
    // In other words, when the signal 'rises'.
    if ( btn.rose() ) {
-    Keyboard.release(KEY_SPACE);
+    Keyboard.release(KEY_W);
   }
 
   // Mapping the flex sensor to attack
@@ -60,16 +60,16 @@ void loop() {
   // Mapping left movement
   isTouchL = touchRead(kLeft);
   if(isTouchL > 4500){
-    Keyboard.press(KEY_LEFT);
+    Keyboard.press(KEY_A);
   } else {
-    Keyboard.release(KEY_LEFT);
+    Keyboard.release(KEY_A);
   }
 
   // Mapping right movement
   isTouchR = touchRead(kRight);
   if(isTouchR > 4500){
-    Keyboard.press(KEY_RIGHT);
+    Keyboard.press(KEY_D);
   } else {
-    Keyboard.release(KEY_RIGHT);
+    Keyboard.release(KEY_D);
   }
 }
